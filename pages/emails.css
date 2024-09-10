@@ -1,0 +1,58 @@
+/* Custom styles for theme toggle */
+.theme-checkbox {
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+}
+
+.theme-checkbox::before {
+  content: "";
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  transition: left 0.4s, background-position 0.4s;
+}
+
+.theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.5em);
+  background-position: 0;
+}
+h1 {
+  font-size: 23px; /* Large font size */
+  color: #333; /* Dark gray color for the text */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Margin at the top */
+  margin-bottom: 10px; /* Margin at the bottom */
+  font-weight: 700; /* Bold font */
+  font-family: 'Arial', sans-serif; /* Font family */
+}
+
+.theme-checkbox:checked {
+  background-position: 100%;
+}
+
+.back-button {
+  display: inline-block;
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-left: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s;
+  margin-top: 20px; /* Space above the Back button */
+}
+
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}

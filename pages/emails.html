@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="emails.js" defer></script>
+    <link rel="stylesheet" href="emails.css" /> <!-- Include custom CSS for the toggle -->
+  </head>
+  
+  <h1>GET Onebox thread</h1> <br>
+  <body class="transition-colors duration-400 bg-white text-black dark:bg-black dark:text-white">
+    <div class="email-list p-4">
+      <!-- Emails will be dynamically inserted here -->
+    </div>
+    
+    <!-- Theme Toggle Checkbox -->
+    <a href="loginsignup.html" class="back-button">Back</a>
+    <input type="checkbox" class="theme-checkbox absolute top-4 right-4 w-24 h-12 bg-gradient-to-r from-gray-200 to-gray-800 rounded-full appearance-none cursor-pointer transition-all duration-400" id="themeToggle">
+  </body>
+</html>

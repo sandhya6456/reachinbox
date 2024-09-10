@@ -1,0 +1,57 @@
+/* reset.css */
+
+/* Ensure the body takes the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    background-color: #ffffff; /* Black background */
+    color: #080808; /* White text color */
+  }
+  h1{
+    padding: 30px;
+  }
+  /* Style for the heading */
+  
+  /* Container for the reset message */
+  .reset-message {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd; /* Optional: border to define the message area */
+    border-radius: 8px; /* Optional: rounded corners */
+    background-color: #000000; /* Optional: background color for the message */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    margin-bottom: 20px; /* Space below the reset-message */
+  }
+  
+  .reset-message p {
+    margin: 0;
+    font-size: 16px;
+    color: #fff; /* White text color */
+  }
+/* Styles for the Back button (anchor tag) */
+.back-button {
+    display: inline-block;
+    background-color: #007bff; /* Primary button color */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Space above the Back button */
+  }
+  
+  
+  .back-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+
+  

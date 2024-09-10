@@ -1,0 +1,177 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+/* Root container */
+.loginsignup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the footer stays at the bottom */
+  align-items: center;
+  min-height: 100vh;  /* Full height of the viewport */
+  background: #000000;
+  padding-right: 13px;
+  box-sizing: border-box;
+}
+
+
+/* Header (Container 2) */
+.loginsignup .container-2 {
+  background: #0A0909;
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* Center the logo horizontally */
+  align-items: center;      /* Align items vertically */
+  padding: 70px 0;          /* Adjust padding */
+  box-sizing: border-box;
+  margin-bottom: 20px;      /* Reduce the margin to bring content closer */
+}
+
+/* Logo inside container 2 */
+.loginsignup .logo-12 {
+  background: url('../assets/images/logo_12.png') no-repeat center center;
+  background-size: contain;
+  width: 326px;
+  height: 51px;
+}
+
+/* Main container (Container 3) */
+.loginsignup .container-3 {
+  background: #171616;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 20px 37px 20px;
+  width: 100%;
+  max-width: 765px;  /* Restrict max width */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Rectangle */
+.loginsignup .rectangle-2 {
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 610px;
+  height: 87px;
+  margin-bottom: 20px;
+}
+
+/* Title */
+.loginsignup .create-anew-account {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+/* Google container */
+.loginsignup .container {
+  position: relative;
+  margin: 0 23.5px 53px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Aligns Google icon and text vertically */
+  padding: 15px 15px;  /* Adds space inside the border */
+  border: 2px solid rgb(80, 77, 77); /* Border color */
+  border-radius: 20px; /* Curved edges */
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+/* Google icon */
+.loginsignup .google {
+  background: url('../assets/images/google.png') 50% / contain no-repeat;
+  width: 67px;
+  height: 53px;
+  margin-right: 12px;
+}
+
+/* Google Sign Up text */
+.loginsignup .sign-up-with-google {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 22px;
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
+/* Create Account button */
+.loginsignup .container-1 {
+  background: rgba(2, 137, 255, 0.66);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  width: 100%;
+  max-width: 385px;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Already have an account text */
+.loginsignup .already-have-an-account-sign-in {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.loginsignup .footer {
+  background: #030303;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;  /* Removed any position:absolute or fixed */
+  bottom: 0;           /* Optional: Just to be explicit */
+}
+
+.loginsignup .reachinbox-all-rights-reserved {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5C5F66;
+}
+
+/* No scrolling, ensure desktop width */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  gap: 20px; /* Space between items */
+  align-items: flex-start; /* Align items at the start of the container */
+  flex-wrap: wrap; /* Allow items to wrap if needed */
+}
+
+/* Styling for buttons */
+.container button {
+  background-color: #3490dc; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Change background color on hover */
+.container button:hover {
+  background-color: #2779bd; /* Darker blue */
+}
+
+
