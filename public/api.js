@@ -71,6 +71,99 @@ function resetAllEmails() {
     });
 });
 
+// delete
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'd' || event.key === 'D') {
+    // Prompt the user to enter the thread ID
+    const threadId = prompt('Please enter the Thread ID:');
+    
+    if (threadId) {
+      // Define your API token (replace 'YOUR_API_TOKEN' with the actual token)
+      const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoic2FuZGh5YWt1bWFyaTIwMDgyMDAzQGdtYWlsLmNvbSIsImlkIjoxNDM2LCJmaXJzdE5hbWUiOiJTYW5kaHlhIiwibGFzdE5hbWUiOiJLdW1hcmkifSwiaWF0IjoxNzI1OTY3OTIyLCJleHAiOjE3NTc1MDM5MjJ9.-SDlp2zy5XB8vaskTj0EPLWxYONchKmbQ-Lyt5GBEtA'; 
+
+      // Send the API request with the provided thread ID
+      fetch(`https://hiring.reachinbox.xyz/api/v1/onebox/messages/${threadId}`, {
+        method: 'DELETE', // Use DELETE method for deletion
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiToken}` // Include the API token
+        },
+      })
+      .then(response => response.json().then(data => ({ status: response.status, body: data }))) // Parse JSON and include status
+      .then(result => {
+        if (result.status === 200) {
+          // Success response
+          alert(result.body.message);
+        } else if (result.status === 404) {
+          // Handle 404 Not Found
+          alert(`Error: ${result.body.message}`);
+        } else if (result.status === 401) {
+          // Handle 401 Unauthorized
+          alert('Unauthorized: Please check your API token.');
+        } else {
+          // Handle other non-success responses
+          alert('An unexpected error occurred.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle error response here (e.g., show an error message)
+        alert('An error occurred. Please try again.');
+      });
+    } else {
+      // Handle case where thread ID is not provided
+      alert('Thread ID is required.');
+    }
+  }
+});
+
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'r' || event.key === 'R') {
+    // Prompt the user to enter the thread ID
+    const threadId = prompt('Please enter the Thread ID:');
+    
+    if (threadId) {
+      // Define your API token (replace 'YOUR_API_TOKEN' with the actual token)
+      const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoic2FuZGh5YWt1bWFyaTIwMDgyMDAzQGdtYWlsLmNvbSIsImlkIjoxNDM2LCJmaXJzdE5hbWUiOiJTYW5kaHlhIiwibGFzdE5hbWUiOiJLdW1hcmkifSwiaWF0IjoxNzI1OTY3OTIyLCJleHAiOjE3NTc1MDM5MjJ9.-SDlp2zy5XB8vaskTj0EPLWxYONchKmbQ-Lyt5GBEtA'; 
+
+      // Send the API request with the provided thread ID
+      fetch(`https://hiring.reachinbox.xyz/api/v1/onebox/reply/${threadId}`, {
+        method: 'POST', // Use DELETE method for deletion
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiToken}` // Include the API token
+        },
+      })
+      .then(response => response.json().then(data => ({ status: response.status, body: data }))) // Parse JSON and include status
+      .then(result => {
+        if (result.status === 200) {
+          // Success response
+          alert(result.body.message);
+        } else if (result.status === 404) {
+          // Handle 404 Not Found
+          alert(`Error: ${result.body.message}`);
+        } else if (result.status === 401) {
+          // Handle 401 Unauthorized
+          alert('Unauthorized: Please check your API token.');
+        } else {
+          // Handle other non-success responses
+          alert('An unexpected error occurred.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle error response here (e.g., show an error message)
+        alert('An error occurred. Please try again.');
+      });
+    } else {
+      // Handle case where thread ID is not provided
+      alert('Thread ID is required.');
+    }
+  }
+});
+
 
 
   
