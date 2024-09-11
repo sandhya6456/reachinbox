@@ -1,4 +1,26 @@
 // auth.js
+document.getElementById('saveButton').addEventListener('click', function() {
+  // Get the HTML content of the entire page
+  const pageContent = document.documentElement.outerHTML;
+
+  // Create a Blob with the HTML content
+  const blob = new Blob([pageContent], { type: 'text/html' });
+
+  // Create an object URL for the Blob
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'index.html';  // Name of the file to be downloaded
+
+  // Trigger the download by simulating a click on the link
+  a.click();
+
+  // Clean up the URL object
+  URL.revokeObjectURL(url);
+});
+
+
 
 // Extract token from URL query string
 function getTokenFromURL() {
