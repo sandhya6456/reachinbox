@@ -1,58 +1,48 @@
-/* reset.css */
 
-/* Ensure the body takes the full height of the viewport */
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff; /* White background by default */
-  color: #080808; /* Dark text by default */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+  background-color: #ffffff; 
+  color: #080808; 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Full-screen centering */
 body {
   justify-content: center;
   align-items: center;
 }
 
-/* Apply dark theme to the full screen */
 body.dark {
-  background-color: #080808; /* Dark background */
-  color: #ffffff; /* Light text in dark mode */
+  background-color: #080808; 
+  color: #ffffff; 
 }
 
-/* Style for headings */
 h1, h3 {
   margin: 10px;
   text-align: center;
 }
 
-/* Reset message box */
-/* Centering and resizing .reset-message */
 .reset-message {
   text-align: center;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
-  margin: 0 auto; /* Center horizontally */
-  max-width: 400px; /* Adjust the width as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the box */
-  /* Optional: Add a margin-top if needed to separate it from other content */
+  margin: 0 auto;
+  max-width: 400px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   margin-top: 20px; 
 }
 
 
-/* Dark mode for reset message */
 body.dark .reset-message {
-  background-color: #333333; /* Dark mode background for reset message */
-  color: #ffffff; /* White text in dark mode */
+  background-color: #333333;
+  color: #ffffff; 
 }
 
-/* Back button styles */
 .back-button {
   display: inline-block;
   background-color: #007bff;
@@ -69,7 +59,6 @@ body.dark .reset-message {
   background-color: #0056b3;
 }
 
-/* Theme Toggle Styles */
 .theme-checkbox {
   position: absolute;
   top: 10px;
@@ -85,9 +74,6 @@ body.dark .reset-message {
 
 .theme-checkbox:checked::before {
   transform: translateX(20px);
-}
-.theme-checkbox:checked {
-  background-color: black;
 }
 .theme-checkbox::before {
   content: "";
