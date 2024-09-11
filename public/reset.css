@@ -2,56 +2,102 @@
 
 /* Ensure the body takes the full height of the viewport */
 html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center children vertically */
-    align-items: center; /* Center children horizontally */
-    background-color: #ffffff; /* Black background */
-    color: #080808; /* White text color */
-  }
-  h1{
-    padding: 30px;
-  }
-  /* Style for the heading */
-  
-  /* Container for the reset message */
-  .reset-message {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd; /* Optional: border to define the message area */
-    border-radius: 8px; /* Optional: rounded corners */
-    background-color: #000000; /* Optional: background color for the message */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
-    margin-bottom: 20px; /* Space below the reset-message */
-  }
-  
-  .reset-message p {
-    margin: 0;
-    font-size: 16px;
-    color: #fff; /* White text color */
-  }
-/* Styles for the Back button (anchor tag) */
-.back-button {
-    display: inline-block;
-    background-color: #007bff; /* Primary button color */
-    color: #fff; /* White text */
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s;
-    margin-top: 20px; /* Space above the Back button */
-  }
-  
-  
-  .back-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-  }
-  
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* White background by default */
+  color: #080808; /* Dark text by default */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
 
-  
+/* Full-screen centering */
+body {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Apply dark theme to the full screen */
+body.dark {
+  background-color: #080808; /* Dark background */
+  color: #ffffff; /* Light text in dark mode */
+}
+
+/* Style for headings */
+h1, h3 {
+  margin: 10px;
+  text-align: center;
+}
+
+/* Reset message box */
+/* Centering and resizing .reset-message */
+.reset-message {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 400px; /* Adjust the width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the box */
+  /* Optional: Add a margin-top if needed to separate it from other content */
+  margin-top: 20px; 
+}
+
+
+/* Dark mode for reset message */
+body.dark .reset-message {
+  background-color: #333333; /* Dark mode background for reset message */
+  color: #ffffff; /* White text in dark mode */
+}
+
+/* Back button styles */
+.back-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+/* Theme Toggle Styles */
+.theme-checkbox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 10px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+}
+
+.theme-checkbox:checked::before {
+  transform: translateX(20px);
+}
+.theme-checkbox:checked {
+  background-color: black;
+}
+.theme-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 1px;
+  left: 1px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+

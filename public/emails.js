@@ -33,29 +33,28 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('No email data found in localStorage');
     }
 });
-
 document.addEventListener('DOMContentLoaded', function () {
-    const themeToggle = document.getElementById('themeToggle');
-    const rootElement = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const bodyElement = document.body;
+
+  // Default to dark mode if stored in localStorage
+  const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
   
-    // Default to dark mode
-    const darkModeEnabled = localStorage.getItem('darkMode') !== 'disabled';
-    
-    if (darkModeEnabled) {
-      rootElement.classList.add('dark');
-      themeToggle.checked = true; // Reflect checkbox state
+  if (darkModeEnabled) {
+    bodyElement.classList.add('dark-mode');
+    themeToggle.checked = true;
+  }
+
+  // Event listener for theme toggle switch
+  themeToggle.addEventListener('change', function () {
+    if (this.checked) {
+      bodyElement.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      bodyElement.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'disabled');
     }
-  
-    // Theme toggle switch event listener
-    themeToggle.addEventListener('change', function () {
-      if (this.checked) {
-        rootElement.classList.add('dark');
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        rootElement.classList.remove('dark');
-        localStorage.setItem('darkMode', 'disabled');
-      }
-    });
+  });
 });
 
 

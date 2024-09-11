@@ -1,58 +1,81 @@
+/* Light Mode (default) */
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
 /* Custom styles for theme toggle */
 .theme-checkbox {
-  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
-  background-size: 205%;
-  background-position: 0;
-}
-
-.theme-checkbox::before {
-  content: "";
-  width: 2.25em;
-  height: 2.25em;
   position: absolute;
-  top: 0.5em;
-  left: 0.5em;
-  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
-  background-size: 205%;
-  background-position: 100%;
-  border-radius: 50%;
-  transition: left 0.4s, background-position 0.4s;
-}
-
-.theme-checkbox:checked::before {
-  left: calc(100% - 2.25em - 0.5em);
-  background-position: 0;
-}
-h1 {
-  font-size: 23px; /* Large font size */
-  color: #333; /* Dark gray color for the text */
-  text-align: center; /* Center the text */
-  margin-top: 20px; /* Margin at the top */
-  margin-bottom: 10px; /* Margin at the bottom */
-  font-weight: 700; /* Bold font */
-  font-family: 'Arial', sans-serif; /* Font family */
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 10px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
 }
 
 .theme-checkbox:checked {
-  background-position: 100%;
+  background-color: black;
 }
 
+/* Toggle switch button */
+.theme-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 1px;
+  left: 1px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+.theme-checkbox:checked::before {
+  transform: translateX(20px);
+}
+
+/* Back button styles */
 .back-button {
   display: inline-block;
-  background-color: #007bff; /* Primary button color */
-  color: #fff; /* White text */
-  border: none;
-  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
   padding: 10px 20px;
-  margin-left: 40px;
-  font-size: 16px;
+  margin: 20px;
+  text-decoration: none;
+  border-radius: 4px;
   cursor: pointer;
-  text-decoration: none; /* Remove underline */
   transition: background-color 0.3s;
-  margin-top: 20px; /* Space above the Back button */
 }
-
 
 .back-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
+
+/* h1 styles */
+h1 {
+  font-size: 23px;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px;
+}
+.email-header{
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.email-body{
+  margin-left: 20px;
+}
+
