@@ -19,7 +19,7 @@
 
 /* Header (Container 2) */
 .loginsignup .container-2 {
-  background: #0A0909;
+  background: #020202;
   width: 100%;
   display: flex;
   justify-content: center; /* Center the logo horizontally */
@@ -61,16 +61,18 @@
   color: #FFFFFF;
   margin-bottom: 20px; /* Adjust margin for mobile */
 }
-
+.sign-up-with-google{
+  padding-left: 70px;
+}
 /* Google container */
-.loginsignup .container {
+.loginsignup .containers {
   position: relative;
   margin: 0 0 40px 0; /* Adjust margins for mobile */
   display: flex;
   flex-direction: row;
   align-items: center; /* Aligns Google icon and text vertically */
   padding: 10px 10px; /* Reduce padding for mobile */
-  border: 2px solid rgb(80, 77, 77); /* Border color */
+  border: 2px solid rgb(82, 77, 77); /* Border color */
   border-radius: 20px; /* Curved edges */
   width: 100%; /* Full width for mobile */
   max-width: 400px; /* Restrict max width */
