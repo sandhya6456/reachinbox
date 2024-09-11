@@ -1,12 +1,37 @@
 
+function storeAuthTokenFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get('token');
+
+  if (token) {
+    // Optionally store the token in localStorage
+    localStorage.setItem('authToken', token);
+    
+    // Log the token to ensure it's captured
+    console.log('Token retrieved from URL:', token);
+  } else {
+    console.log('Token not found in URL');
+  }
+  
+  // Return the token
+  return token;
+}
+
+// Call the function when the page loads
+window.onload = function () {
+  const token = storeAuthTokenFromUrl();
+  console.log('Token stored in const:', token); // Use the token as needed
+};
+
+// Function to get the token from localStorage
 function getAuthToken() {
   const token = localStorage.getItem('authToken');
   console.log('Retrieved token:', token); // Verify token retrieval
   return token;
-  }
+}
   function fetchWithAuth(url, options = {}) {
-    // const token = getAuthToken();
-    token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoic2FuZGh5YWt1bWFyaTIwMDgyMDAzQGdtYWlsLmNvbSIsImlkIjoxNDM2LCJmaXJzdE5hbWUiOiJTYW5kaHlhIiwibGFzdE5hbWUiOiJLdW1hcmkifSwiaWF0IjoxNzI1OTY3OTIyLCJleHAiOjE3NTc1MDM5MjJ9.-SDlp2zy5XB8vaskTj0EPLWxYONchKmbQ-Lyt5GBEtA"
+    const token = getAuthToken();
+    //token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoic2FuZGh5YWt1bWFyaTIwMDgyMDAzQGdtYWlsLmNvbSIsImlkIjoxNDM2LCJmaXJzdE5hbWUiOiJTYW5kaHlhIiwibGFzdE5hbWUiOiJLdW1hcmkifSwiaWF0IjoxNzI1OTY3OTIyLCJleHAiOjE3NTc1MDM5MjJ9.-SDlp2zy5XB8vaskTj0EPLWxYONchKmbQ-Lyt5GBEtA"
     const headers = new Headers(options.headers || {});
     if (token) {
       headers.append('Authorization', `Bearer ${token}`);
@@ -70,7 +95,7 @@ function resetAllEmails() {
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'd' || event.key === 'D') {
-    const threadId = prompt('Please enter the Thread ID to delete as you pressed shortcut key D or d:');
+    const threadId = prompt('Please enter the Thread ID to delete as you pressed shortcut D or d:');
     
     if (threadId) {
       const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoic2FuZGh5YWt1bWFyaTIwMDgyMDAzQGdtYWlsLmNvbSIsImlkIjoxNDM2LCJmaXJzdE5hbWUiOiJTYW5kaHlhIiwibGFzdE5hbWUiOiJLdW1hcmkifSwiaWF0IjoxNzI1OTY3OTIyLCJleHAiOjE3NTc1MDM5MjJ9.-SDlp2zy5XB8vaskTj0EPLWxYONchKmbQ-Lyt5GBEtA'; 
@@ -109,7 +134,7 @@ document.addEventListener('keydown', function(event) {
 //REPLY
 document.addEventListener('keydown', function(event) {
   if (event.key === 'r' || event.key === 'R') {
-    const threadId = prompt('Please enter the Thread ID to reply as you pressed shortcut key R or r:');
+    const threadId = prompt('Please enter the Thread ID to Reply Email as you pressed shortcut key R or r:');
     
     if (threadId) {
       const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoic2FuZGh5YWt1bWFyaTIwMDgyMDAzQGdtYWlsLmNvbSIsImlkIjoxNDM2LCJmaXJzdE5hbWUiOiJTYW5kaHlhIiwibGFzdE5hbWUiOiJLdW1hcmkifSwiaWF0IjoxNzI1OTY3OTIyLCJleHAiOjE3NTc1MDM5MjJ9.-SDlp2zy5XB8vaskTj0EPLWxYONchKmbQ-Lyt5GBEtA'; 
