@@ -17,21 +17,8 @@
   box-sizing: border-box;
 }
 
-/* Header (Container 2) */
-.loginsignup .container-2 {
-  background: #020202;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* Center the logo horizontally */
-  align-items: center; /* Align items vertically */
-  padding: 50px 0; /* Adjust padding for mobile */
-  box-sizing: border-box;
-  margin-bottom: 20px; /* Reduce the margin to bring content closer */
-}
-
-/* Main container (Container 3) */
 .loginsignup .container-3 {
-  background: #171616;
+  background: #2c2a2a;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
