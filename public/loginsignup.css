@@ -64,6 +64,13 @@
 .sign-up-with-google{
   padding-left: 70px;
 }
+
+@media (max-width: 768px) {
+  .sign-up-with-google {
+    padding-left: 20px; /* Adjust padding for mobile */
+    /* Add any other styles for mobile here */
+  }
+}
 /* Google container */
 .loginsignup .containers {
   position: relative;
